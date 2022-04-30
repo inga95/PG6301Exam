@@ -1,0 +1,31 @@
+{
+  "name": "pg6301exam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "concurrently npm:dev:client npm:dev:server",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inga95/PG6301Exam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inga95/PG6301Exam/issues"
+  },
+  "homepage": "https://github.com/inga95/PG6301Exam#readme",
+  "devDependencies": {
+    "concurrently": "^7.1.0",
+    "prettier": "^2.6.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.0"
+  }
+}
