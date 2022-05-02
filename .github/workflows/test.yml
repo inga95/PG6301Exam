@@ -1,12 +1,13 @@
-name: Run test
+name: Run tests
 
 on:
   push:
     branches:
-      -main
+      - main
 
 jobs:
   test:
+
     runs-on: ubuntu-latest
 
     steps:
@@ -14,6 +15,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
-          cache: 'npm'
       - run: npm ci
-      - run: npm test
+      - run: npm run verify
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

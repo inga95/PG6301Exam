@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel watch index.html"
+    "test": "jest",
+    "dev": "parcel watch index.html",
+    "build": "npm install  --include=dev && parcel build index.html",
+    "verify": "npm run format:check && jest --collectCoverage",
+    "format": "prettier --write *.{jsx,js} __tests__/**/*.{jsx,js}",
+    "format:check": "prettier --check *.{jsx,js} __tests__/**/*.{jsx,js}"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +18,8 @@
     "@babel/preset-react": "^7.16.7",
     "babel-jest": "^28.0.3",
     "jest": "^28.0.3",
-    "parcel": "^2.5.0"
+    "parcel": "^2.5.0",
+    "prettier": "^2.6.2"
   },
   "dependencies": {
     "@parcel/transformer-react-refresh-wrap": "^2.5.0",
@@ -29,6 +34,10 @@
     ]
   },
   "jest": {
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "collectCoverageFrom": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
   }
 }

@@ -1,0 +1,5 @@
+GET {{server}}/api/movies
+
+###
+POST {{server}}/api/movies
+Content-Type: application/json
