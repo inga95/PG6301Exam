@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  test:
-
+  verify:
+    permissions: write-all
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 16.x
       - run: npm ci
-      - run: npm run verify
+      - run: npm test
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
