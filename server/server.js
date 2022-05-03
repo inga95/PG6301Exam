@@ -36,6 +36,4 @@ app.use((req, res) => {
     res.sendFile(path.resolve("..", "client", "dist", "index.html"));
 });
 
-//Trenger noe middleware for å fikse at det går an å refreshe en side
-
 app.listen(process.env.PORT || 3000);
